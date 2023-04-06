@@ -8,7 +8,7 @@ Cloner le dépôt
 Pour cloner ce dépôt, exécutez la commande suivante dans votre terminal:
 git clone https://github.com/votreutilisateur/excuses-de-dev-backend.git
 
-##Configurer le fichier .env
+## Configurer le fichier .env
 Après avoir cloné le dépôt, créez un fichier .env à la racine du projet et configurez-le avec les variables d'environnement suivantes :
 
 SERVER_PORT=8010
@@ -16,14 +16,14 @@ DB_URL="mongodb://127.0.0.1:27017/test_SYMBOL-IT"
 
 Ces variables d'environnement spécifient le port sur lequel le serveur s'exécutera et l'URL de la base de données MongoDB à utiliser.
 
-##Installer les dépendances
+## Installer les dépendances
 Pour installer les dépendances du projet, exécutez la commande suivante dans votre terminal:
 
 yarn
 
 Cela installera toutes les dépendances nécessaires pour le backend.
 
-##Démarrer le serveur
+## Démarrer le serveur
 Pour démarrer le serveur, exécutez la commande suivante dans votre terminal:
 
 yarn dev
@@ -31,13 +31,13 @@ yarn dev
 
 Cela démarrera le serveur en mode développement et il sera prêt à recevoir des requêtes.
 
-##Utilisation du backend
+## Utilisation du backend
 Une fois que le serveur est en cours d'exécution, vous pouvez utiliser les routes suivantes pour tester les fonctionnalités du backend :
 
-Obtenir toutes les excuses (verbe GET): http://127.0.0.1:8010/api/*
-Obtenir une excuse au hasard (verbe GET): http://127.0.0.1:8010/api/random
-Ajouter une nouvelle excuse (verbe POST): http://127.0.0.1:8010/api/newexcuse
-Pour ajouter une nouvelle excuse, utilisez le format de corps de requête JSON suivant :
+ - Obtenir toutes les excuses (verbe GET): http://127.0.0.1:8010/api/*
+ - Obtenir une excuse au hasard (verbe GET): http://127.0.0.1:8010/api/random
+ - Ajouter une nouvelle excuse (verbe POST): http://127.0.0.1:8010/api/newexcuse
+ - Pour ajouter une nouvelle excuse, utilisez le format de corps de requête JSON suivant :
 
 {
   "http_code": 901,

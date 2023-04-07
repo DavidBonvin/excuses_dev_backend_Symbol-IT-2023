@@ -20,23 +20,35 @@ const getAllExcusesController = async (req, res) => {
 
 const createExcuse = async (req, res) => {
   try {
-    const {http_code , tag , message } = req.body;
-    console.log ("entra petition en controller",http_code, tag, message);
+    const { http_code, tag, message } = req.body;
+    console.log("entra petition en controller", http_code, tag, message);
     const newExcuse = await service.create({
       http_code,
       tag,
       message
     });
-    if ( newExcuse.error) throw newExcuse.error;
-    return newExcuse.data, newExcuse.message, console.log("successfully created excuse");
+    if (newExcuse.error) throw newExcuse.error;
+    if (!newExcuse.data) {
+      // Si no se guarda correctamente, retornar un error 500
+      return res.status(500).json({
+        message: "No se pudo crear la excusa",
+        success: false
+      });
+    }
+    return res.status(200).json({
+      data: newExcuse.data,
+      message: newExcuse.message,
+      success: true
+    });
   } catch (error) {
     res.status(400).json(error);
   }
-}
+};
+
 
 const getHttp_codeController = async (req, res) => {
   const http_code = req.params.http_code; 
-  console.log(http_code);
+ 
   try {
     const result = await service.getHttp_code_Service(http_code);
     res.json(result); 

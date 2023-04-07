@@ -2,8 +2,6 @@ const { default: mongoose } = require('mongoose');
 const Excuse = require('../model/excusesModel');
 
 
-
-
 const getRandomExcuse = async () => {
   try {
     
@@ -33,8 +31,8 @@ const create = async ({ http_code , tag , message }) => {
     const newExcuses = new Excuse(
       {
         http_code: http_code,
-        tag: tag,
-        message: message
+        "tag ": tag,
+        "message ": message
       }
     );
     
@@ -46,8 +44,21 @@ const create = async ({ http_code , tag , message }) => {
   }
 }
 
+const getHttp_code_Service = async (http_code) => {
+  try {
+    const result = await Excuse.findOne({ http_code }); 
+    if (!result) {
+      throw new Error('Objeto no encontrado'); 
+    }
+    return result; 
+  } catch (error) {
+    throw new Error('Error en el servicio'); 
+  }
+};
+
 module.exports = {
   getRandomExcuse,
   getAllExcuses,
   create,
+  getHttp_code_Service,
 };

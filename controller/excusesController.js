@@ -34,8 +34,21 @@ const createExcuse = async (req, res) => {
   }
 }
 
+const getHttp_codeController = async (req, res) => {
+  const http_code = req.params.http_code; 
+  console.log(http_code);
+  try {
+    const result = await service.getHttp_code_Service(http_code);
+    res.json(result); 
+  } catch (error) {
+    
+    res.status(500).json({ error: 'Error en el servidor' });
+  }
+};
+
 module.exports = {
  getRandomExcuses,
  getAllExcusesController,
  createExcuse,
+ getHttp_codeController,
 }

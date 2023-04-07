@@ -5,11 +5,11 @@ const excuseSchema = mongoose.Schema({
     type: Number,
     required: true
   },
-  tag: {
+  "tag ": {
     type: String,
     required: true
   },
-  message: {
+  "message ": {
     type: String,
     required: true
   }

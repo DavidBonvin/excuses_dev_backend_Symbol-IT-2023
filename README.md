@@ -47,9 +47,17 @@ Une fois que le serveur est en cours d'exécution, vous pouvez utiliser les rout
   "message": "excuse"
 }
 
+## Base de données MongoDB
+Cette application utilise MongoDB comme base de données, que ce soit avec MongoDB Atlas dans le cloud ou MongoDB Compass en local. 
+Vous pouvez trouver un fichier excusas.json dans le référentiel pour alimenter votre base de données.
+
+
 Ces instructions vous aideront à configurer, installer et utiliser le backend d'Excuses de Dev dans votre environnement local. 
 
+
+
 ### Amusez-vous à générer des excuses amusantes !
+
 
 #### David Cordoba Bonvin
 

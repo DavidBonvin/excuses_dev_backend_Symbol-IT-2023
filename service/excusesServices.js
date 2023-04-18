@@ -12,7 +12,7 @@ const getRandomExcuse = async () => {
   
     return randomExcuse;
   } catch (error) {
-    throw new Error('Error al obtener una excusa aleatoria: ' + error.message);
+    throw new Error("Erreur d'obtention d'une excuse aléatoire :" + error.message);
   }
 };
 
@@ -48,11 +48,11 @@ const getHttp_code_Service = async (http_code) => {
   try {
     const result = await Excuse.findOne({ http_code }); 
     if (!result) {
-      throw new Error('Objeto no encontrado'); 
+      throw new Error('Objet non trouvé'); 
     }
     return result; 
   } catch (error) {
-    throw new Error('Error en el servicio'); 
+    throw new Error('Erreur de service'); 
   }
 };
 

@@ -12,7 +12,7 @@ const getRandomExcuses = async (req, res) => {
 const getAllExcusesController = async (req, res) => {
  try {
    const excuses = await service.getAllExcuses();
-   res.status(200).json({ users: excuses });
+   res.status(200).json({ allExcuses: excuses });
  } catch (error) {
    res.status(400).json({ message: error.message });
  }
@@ -21,7 +21,7 @@ const getAllExcusesController = async (req, res) => {
 const createExcuse = async (req, res) => {
   try {
     const { http_code, tag, message } = req.body;
-    console.log("entra petition en controller", http_code, tag, message);
+    console.log("requête:", http_code, tag, message);
     const newExcuse = await service.create({
       http_code,
       tag,
@@ -29,9 +29,9 @@ const createExcuse = async (req, res) => {
     });
     if (newExcuse.error) throw newExcuse.error;
     if (!newExcuse.data) {
-      // Si no se guarda correctamente, retornar un error 500
+     // Si l'enregistrement n'est pas correct, renvoyer l'erreur 500
       return res.status(500).json({
-        message: "No se pudo crear la excusa",
+        message: "L'excuse n'a pas pu être créée.",
         success: false
       });
     }
@@ -54,7 +54,7 @@ const getHttp_codeController = async (req, res) => {
     res.json(result); 
   } catch (error) {
     
-    res.status(500).json({ error: 'Error en el servidor' });
+    res.status(500).json({ error: 'Erreur de serveur' });
   }
 };
 

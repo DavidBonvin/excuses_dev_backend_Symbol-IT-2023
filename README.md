@@ -59,7 +59,7 @@ Ces instructions vous aideront à configurer, installer et utiliser le backend d
 ### Amusez-vous à générer des excuses amusantes !
 
 
-#### David Cordoba Bonvin
+#### David Cordoba
 
 
 
